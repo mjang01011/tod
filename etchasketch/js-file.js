@@ -27,19 +27,26 @@ makeGrid();
 
 function randomColor(){
     color = Math.floor(Math.random()*16777215).toString(16);
-    console.log(color);
+    let displayColor = document.querySelector(".dot");
+    displayColor.style.backgroundColor = '#' + color;;
 }
 
 function setColor(userColorChoice){
     color = userColorChoice;
+    let displayColor = document.querySelector(".dot");
+    displayColor.style.backgroundColor = '#' + color;;
 }
 
 function activateBrush(){
     brush = true;
+    let tool = document.querySelector(".tool");
+    tool.textContent = "Brush";
 }
 
 function activateErase(){
     brush = false;
+    let tool = document.querySelector(".tool");
+    tool.textContent = "Eraser";
 }
 
 function clearGrid(){
